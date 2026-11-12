@@ -14,7 +14,7 @@ jobs:
     container:
       image: fedora:40
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install dependencies
         run: dnf install -y ninja-build cmake gtest-devel re2c clang util-linux clang-tools-extra
       - name: Linting
@@ -54,7 +54,7 @@ jobs:
     runs-on: ${{ matrix.host-os }}
     container: rockylinux/rockylinux:8
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: codespell-project/actions-codespell@master
         with:
           ignore_words_list: fo,wee,addin,notin
@@ -114,7 +114,7 @@ jobs:
     container:
       image: ubuntu:20.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install dependencies
         run: |
           apt update
@@ -166,7 +166,7 @@ jobs:
       matrix:
         image: ["ubuntu:20.04", "ubuntu:22.04", "ubuntu:24.04"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install dependencies
         run: |
           apt update
